@@ -4,12 +4,14 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+
+	"github.com/otgkey/keyboard"
 )
 
 func sendRunner(cmd *cobra.Command, args []string) error {
 	flags := cmd.Flags()
 
-	device, err := flags.GetString("device")
+	path, err := flags.GetString("device")
 	if err != nil {
 		return err
 	}
@@ -17,6 +19,16 @@ func sendRunner(cmd *cobra.Command, args []string) error {
 	if len(args) == 0 {
 		return fmt.Errorf("no input provided")
 	}
+
+	d := keyboard.NewDevice(path)
+
+	for _, x := range args {
+		err := d.SendString(x)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 var sendCmd = &cobra.Command{
