@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/otgkey/keyboard"
+	"github.com/akerl/otgkey/keyboard"
 )
 
 func sendRunner(cmd *cobra.Command, args []string) error {

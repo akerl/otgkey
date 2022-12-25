@@ -4,7 +4,11 @@ package keyboard
 var Empty = [8]byte{0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0}
 
 // Modifiers enumerates keycodes for modifier keys
-var Modifiers = map[string]uint{
+var Modifiers = map[string]byte{
+	"shift":       0x02,
+	"ctrl":        0x01,
+	"alt":         0x04,
+	"meta":        0x08,
 	"left-ctrl":   0x01,
 	"right-ctrl":  0x10,
 	"left-shift":  0x02,
@@ -16,7 +20,7 @@ var Modifiers = map[string]uint{
 }
 
 // Keys enumerates keycodes for non-modifier keys
-var Keys = map[string]uint{
+var Keys = map[string]byte{
 	"a":           0x04,
 	"b":           0x05,
 	"c":           0x06,
