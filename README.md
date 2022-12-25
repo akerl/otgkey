@@ -9,6 +9,14 @@ otgkey sends keycodes to /dev/hidg0 to emulate a keyboard on devices that suppor
 
 ## Usage
 
+Send codes as sequences of "modifier:key". Multiple modifiers or keys can be pressed at once using comma-delimited lists, like "shift,meta:i"
+
+For example, to type "Hello":
+
+```
+otgkey send shift:h e l l o
+```
+
 ## Installation
 
 ```
