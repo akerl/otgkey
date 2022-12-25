@@ -1,0 +1,28 @@
+name 'otgkey'
+org 'akerl'
+
+source(
+  type: 'git',
+  path: '.'
+)
+
+build do
+  run 'make local'
+  cp 'bin'
+end
+
+package(
+  type: 'file',
+  artifacts: %w(linux/amd64 linux/arm linux/arm64).map do |x|
+    os, arch = x.split '/'
+    filename = "#{@forge.name}_#{os}_#{arch}"
+    {
+      source: "bin/#{filename}",
+      name: filename
+    }
+  end
+)
+
+test do
+  # TODO: add tests
+end

@@ -1,0 +1,8 @@
+/.gopath
+/bin
+/vendor/
+/pkg/
+/payload.zip
+/.tools/
+/Dockerfile
+/smoosh

@@ -1,0 +1,3 @@
+PACKAGE = otgkey
+OSARCHLIST = linux/amd64 linux/arm linux/arm64
+VERSION_VAR_PATH = version.Version
